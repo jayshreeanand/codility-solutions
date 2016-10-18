@@ -1,14 +1,9 @@
 # https://codility.com/programmers/lessons/2-arrays/cyclic_rotation/
 def cyclic_rotation(a, k)
-  s = a.size
-  if k > s
-    k = k % (s * 2)
+  return a if (a.empty? || k == 0)
 
-    if k > s
-      a = a.reverse
-      k -= s
-    end
-  end
+  s = a.size
+  k = k % s if k > s
   b = a.pop(k)
   b + a
 end
